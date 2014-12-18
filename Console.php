@@ -17,12 +17,34 @@ class Console {
         }
     }
 
+    public static function writeLine($str = ""){
+        self::write($str.PHP_EOL);
+    }
+
+    public static function write($str){
+        echo $str;
+    }
+
+    public static function writeUnicode($unicode){
+
+        if(is_array($unicode)){
+            if(count($unicode) === 1){
+                return self::writeUnicode($unicode[0]);
+            }else{
+                self::writeUnicode(array_shift($unicode));
+                return self::writeUnicode($unicode);
+            }
+        }
+        self::write((is_int($unicode) ? json_decode('"\u'. dechex($unicode).'"'): $unicode));
+    }
+
     public static function getMemory($pretty = false){
         $memory = memory_get_usage(true);
         return $pretty ? self::prettyMemory($memory) : $memory;
     }
 
-    public static function readLine(){
+    public static function readLine($question = ""){
+        self::write($question);
         return trim(fgets(fopen(self::STDIN,"r")));
     }
 
