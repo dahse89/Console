@@ -3,6 +3,8 @@ Console
 
 PHP Class for easy build CLI scripts.
 
+**basic utilities**
+
 exit if script isn't started in cli
 ```php
 Console::exitInWrongEnv("Please run in shell only");
