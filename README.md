@@ -20,3 +20,17 @@ reading cli inputs
 echo "Input: ";
 $line = Console::readLine();
 ```
+writing unicode
+```php
+Console::writeUnicode(0x2727);
+Console::writeUnicode(0x269D);
+Console::writeUnicode(0x2603);
+// ✧ ⚝ ☃
+
+Console::writeUnicode([
+    PHP_EOL, 'a', 0x250C, 0x2500, 0x2510,'b',
+    PHP_EOL, 'c',0x85, 0x2514, 0x2500, 0x2518,'d'
+]);
+//  a┌─┐b
+//  c└─┘d
+```
