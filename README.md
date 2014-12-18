@@ -19,8 +19,10 @@ for($i = 0; $i < 10; $i++){
 ```
 reading cli inputs
 ```php
-echo "Input: ";
+Console::write("Input: ");
 $line = Console::readLine();
+// OR
+$line = Console::readLine("Input: ");
 ```
 writing unicode
 ```php
