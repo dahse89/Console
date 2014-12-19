@@ -57,7 +57,7 @@ Console::writeLine($pi);
 //> Accuracy (enter Integer e.g 10000000 -> Accuracy of 7 decimal places): xas     
 //> Please enter a number!
 //> Accuracy (enter Integer e.g 10000000 -> Accuracy of 7 decimal places): 10000
-//> calculating: 100%   <- running form 0 to 100%
+//> calculating: 100%   <- running from 0 to 100%
 //> 3.1416926635905
 
 ```
