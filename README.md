@@ -37,4 +37,28 @@ Console::writeUnicode([
 ]);
 //  a┌─┐b
 //  c└─┘d
+
+```
+process visualisation
+```php
+/* calc PI */
+Console::writeLine("Calculate PI!",Color::Yellow,Style::Intensity);
+$label = "Accuracy (enter Integer e.g 10000000 -> Accuracy of 7 decimal places): ";
+$accuracy = Console::readInt($label);
+$pi = 0;
+Console::startProcess("calculating", $accuracy);
+for( $i = 1; $i < $accuracy; $i++) {
+    $k = ($i*2)-1 AND $pi = $i & 1 ? $pi + 4/$k : $pi - 4/$k;
+    Console::writeProcess($i);
+}
+Console::writeProcessEnd();
+Console::writeLine($pi);
+
+//> Calculate PI!
+//> Accuracy (enter Integer e.g 10000000 -> Accuracy of 7 decimal places): xas     
+//> Please enter a number!
+//> Accuracy (enter Integer e.g 10000000 -> Accuracy of 7 decimal places): 10000
+//> calculating: 100%   <- running form 0 to 100%
+//> 3.1416926635905
+
 ```
