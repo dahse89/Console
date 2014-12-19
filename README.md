@@ -43,12 +43,11 @@ process visualisation
 ```php
 /* calc PI */
 Console::writeLine("Calculate PI!",Color::Yellow,Style::Intensity);
-$label = "Accuracy (enter Integer e.g 10000000 -> Accuracy of 7 decimal places): ";
-$accuracy = Console::readInt($label);
+$accuracy = Console::readInt("Accuracy (enter Integer e.g 10000000 -> Accuracy of 7 decimal places): ");
 $pi = 0;
 Console::startProcess("calculating", $accuracy);
 for( $i = 1; $i < $accuracy; $i++) {
-    $k = ($i*2)-1 AND $pi = $i & 1 ? $pi + 4/$k : $pi - 4/$k;
+    $pi += 4 / ($i * 2 - 1) * ($i & 1 ? 1 : -1);
     Console::writeProcess($i);
 }
 Console::writeProcessEnd();
